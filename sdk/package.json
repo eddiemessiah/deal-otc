@@ -1,0 +1,16 @@
+{
+  "name": "@dealotc/sdk",
+  "version": "1.0.0",
+  "description": "The official Node.js SDK for Deal OTC. Automate institutional crypto onboarding, document parsing, and Walled Garden verification.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google/genai": "^1.48.0",
+    "node-fetch": "^3.3.2"
+  }
+}
