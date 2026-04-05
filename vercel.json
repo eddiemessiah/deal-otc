@@ -2,7 +2,10 @@
   "version": 2,
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/backend/core/server.js" },
-    { "source": "/", "destination": "/frontend/index.html" },
-    { "source": "/(.*)", "destination": "/frontend/index.html" }
+    { "source": "/how-it-works", "destination": "/frontend/how-it-works.html" },
+    { "source": "/how-it-works.html", "destination": "/frontend/how-it-works.html" },
+    { "source": "/docs", "destination": "/frontend/docs.html" },
+    { "source": "/docs.html", "destination": "/frontend/docs.html" },
+    { "source": "/", "destination": "/frontend/index.html" }
   ]
 }
