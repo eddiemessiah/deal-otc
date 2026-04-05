@@ -1,0 +1,13 @@
+{
+  "name": "Sarah Kim",
+  "email": "sarah.kim@company.com",
+  "role": "engineering",
+  "title": "Senior Frontend Engineer",
+  "team": "Platform",
+  "manager": "Alex Johnson",
+  "buddy": "Chris Lee",
+  "startDate": "2026-04-15",
+  "location": "remote",
+  "techStack": ["React", "TypeScript", "GraphQL"]
+}
+

@@ -1,0 +1,27 @@
+{
+  "name": "openclaw-knowledge-base",
+  "version": "1.0.0",
+  "description": "Personal knowledge base with RAG for OpenClaw",
+  "main": "src/index.js",
+  "scripts": {
+    "ingest": "node scripts/ingest.js",
+    "query": "node scripts/query.js",
+    "list": "node scripts/list.js",
+    "delete": "node scripts/delete.js",
+    "stats": "node scripts/stats.js",
+    "bulk-ingest": "node scripts/bulk-ingest.js",
+    "test": "vitest run",
+    "test:watch": "vitest watch"
+  },
+  "keywords": ["knowledge-base", "rag", "openclaw", "embeddings"],
+  "author": "OpenClaw",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.13.5",
+    "better-sqlite3": "npm:better-sqlite3-multiple-ciphers@^12.6.2"
+  },
+  "devDependencies": {
+    "vitest": "^4.0.18"
+  }
+}
+

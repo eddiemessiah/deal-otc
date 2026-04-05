@@ -1,0 +1,59 @@
+SAAS SERVICE AGREEMENT
+
+This SaaS Service Agreement ("Agreement") is entered into as of January 15, 2025
+("Effective Date") by and between Acme Cloud Corp ("Provider") and Beta Industries
+LLC ("Customer"), collectively referred to as the "Parties."
+
+1. PAYMENT TERMS
+
+1.1 Customer shall pay Provider a monthly subscription fee of $2,500 USD, due
+within 30 days of each invoice date. Late payments shall accrue interest at a
+rate of 1.5% per month.
+
+1.2 Provider reserves the right to increase fees by up to 10% annually upon
+60 days written notice prior to the renewal date.
+
+2. LIMITATION OF LIABILITY
+
+2.1 In no event shall Provider's total aggregate liability exceed the fees paid
+by Customer during the 12 months preceding the claim. This limitation applies
+to all causes of action in the aggregate.
+
+2.2 Neither party shall be liable for indirect, incidental, special, or
+consequential damages, including lost profits or data loss.
+
+3. TERMINATION
+
+3.1 Either party may terminate this Agreement for cause upon 30 days written
+notice if the other party materially breaches and fails to cure within such period.
+
+3.2 Provider may terminate for convenience upon 90 days written notice.
+Customer may not terminate for convenience during the initial 12-month term.
+
+4. CONFIDENTIALITY
+
+4.1 Each party agrees to keep confidential all non-public information disclosed
+by the other party. Confidential information excludes information that is publicly
+available, independently developed, or rightfully received from a third party.
+
+4.2 Confidentiality obligations survive for 3 years after termination.
+
+5. DATA PROTECTION
+
+5.1 Provider shall process Customer data solely for the purpose of delivering
+the Services. Provider shall implement industry-standard security measures.
+
+5.2 In the event of a data breach, Provider shall notify Customer within
+72 hours of discovery.
+
+5.3 Upon termination, Provider shall delete all Customer data within 30 days
+unless retention is required by applicable law.
+
+6. AUTO-RENEWAL
+
+6.1 This Agreement shall automatically renew for successive 12-month terms
+unless either party provides written notice of non-renewal at least 15 days
+prior to the end of the then-current term.
+
+6.2 Renewal pricing is subject to the fee increase provisions in Section 1.2.
+

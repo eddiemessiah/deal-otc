@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deal OTC | Institutional Onboarding</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        bb_black: '#000000',
+                        bb_orange: '#ff6600',
+                        bb_green: '#00cc00',
+                        bb_red: '#ff0000',
+                        bb_gray: '#202020',
+                        surface: '#111111'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['IBM Plex Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #000000; color: #ff9900; font-family: 'IBM Plex Mono', monospace; }
+        .glass { background: rgba(32, 32, 32, 0.8); backdrop-filter: blur(10px); border: 1px solid #333; }
+        .card { border: 1px solid #333; padding: 1.5rem; background: #111; }
+        .glow { text-shadow: 0 0 5px rgba(255, 102, 0, 0.5); }
+        .terminal-header { border-bottom: 2px solid #ff6600; padding-bottom: 0.5rem; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 500; }
+        .stat-value { font-size: 2rem; font-weight: 600; color: #00cc00; }
+        input[type="file"] { display: none; }
+        .btn { background: #333; color: #ff9900; border: 1px solid #ff6600; padding: 0.5rem 1rem; cursor: pointer; text-transform: uppercase; font-size: 0.875rem; transition: all 0.2s; }
+        .btn:hover { background: #ff6600; color: #000; }
+        
+        /* Chat UI */
+        .chat-box { height: 300px; overflow-y: auto; background: #080808; border: 1px solid #333; padding: 1rem; margin-bottom: 1rem; }
+        .message-bot { margin-bottom: 0.5rem; color: #00cc00; }
+        .message-user { margin-bottom: 0.5rem; color: #ff9900; text-align: right; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col p-4 md:p-8">
+
+    <header class="flex justify-between items-end mb-8 terminal-header">
+        <div>
+            <h1 class="text-2xl font-bold glow">DEAL OTC :: TERMINAL</h1>
+            <p class="text-sm text-gray-400 mt-1">Institutional Crypto Onboarding & Mandate Representation</p>
+        </div>
+        <div class="text-right hidden md:block text-sm">
+            <p>CLIENT ID: 123_APEX_FAMILY_OFFICE</p>
+            <p>JURISDICTION: DUBAI, UAE</p>
+            <p>SECURE SESSION <span class="text-bb_green">● ACTIVE</span></p>
+        </div>
+    </header>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 flex-grow">
+        
+        <!-- Left Col: CRM Status & Scoring -->
+        <div class="lg:col-span-1 space-y-6">
+            <div class="card h-full flex flex-col">
+                <h2 class="text-lg mb-4 text-white">3-Tier Verification Status</h2>
+                
+                <div class="flex-grow space-y-6">
+                    <div>
+                        <div class="flex justify-between mb-1 text-sm"><span class="text-gray-300">Approval Score</span><span class="text-bb_green">66 / 100</span></div>
+                        <div class="w-full bg-bb_gray h-3 rounded-sm overflow-hidden">
+                            <div class="bg-bb_green h-full" style="width: 66%"></div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3 text-sm">
+                        <div class="flex justify-between items-center border-b border-gray-800 pb-2">
+                            <span>Proof of Funds (PoF)</span>
+                            <span class="text-bb_green">[ VERIFIED ]</span>
+                        </div>
+                        <div class="flex justify-between items-center border-b border-gray-800 pb-2">
+                            <span>Mandate Letter</span>
+                            <span class="text-bb_green">[ VERIFIED ]</span>
+                        </div>
+                        <div class="flex justify-between items-center border-b border-gray-800 pb-2">
+                            <span class="text-bb_red">UBO Registry</span>
+                            <span class="text-bb_red">[ PENDING UPLOAD ]</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-2">
+                            <span>AML Sanctions Check</span>
+                            <span class="text-yellow-500">[ IN PROGRESS ]</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 pt-4 border-t border-gray-800">
+                    <p class="text-xs text-gray-500 mb-2">Automated Program of Operations</p>
+                    <div class="bg-black border border-gray-800 p-3 text-xs text-gray-400">
+                        > UBOs mapped successfully.<br>
+                        > Capital verified: $15M via JP Morgan.<br>
+                        > WARN: Need final UBO registry PDF.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Middle Col: Document Parser AI (Contract Extractor) -->
+        <div class="lg:col-span-1 space-y-6">
+            <div class="card h-full flex flex-col">
+                <h2 class="text-lg mb-4 text-white flex items-center justify-between">
+                    <span>Document Parser</span>
+                    <span class="text-xs bg-bb_gray px-2 py-1 text-gray-400">Powered by Journey RAG</span>
+                </h2>
+                
+                <div class="flex-grow flex flex-col items-center justify-center border-2 border-dashed border-gray-700 bg-black/50 p-6 text-center hover:border-bb_orange transition-colors">
+                    <svg class="w-12 h-12 text-gray-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+                    <p class="text-sm mb-4">Drag and drop mandate letters, PoF, or incorporation docs for instant AI parsing.</p>
+                    <label class="btn inline-block">
+                        Upload Document
+                        <input type="file" id="fileUpload" accept=".pdf,.txt">
+                    </label>
+                </div>
+
+                <div id="parseResult" class="mt-4 p-4 border border-bb_green bg-green-900/10 hidden">
+                    <p class="text-bb_green text-sm mb-2">> PARSE_SUCCESS: EXTRACTED CLAUSES</p>
+                    <ul class="text-xs space-y-1 text-gray-300">
+                        <li>[CAPITAL]: $15,000,000 USD</li>
+                        <li>[JURISDICTION]: Dubai</li>
+                        <li>[RISK_FLAGS]: NONE</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Col: Deal Agent Chat (Spectrum API) -->
+        <div class="lg:col-span-1 space-y-6">
+            <div class="card h-full flex flex-col">
+                <h2 class="text-lg mb-4 text-white flex justify-between">
+                    <span>Deal Agent Copilot</span>
+                    <span class="flex items-center gap-2 text-xs text-gray-400"><svg class="w-4 h-4 text-blue-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .24z"/></svg> TELEGRAM SYNCED</span>
+                </h2>
+                
+                <div class="chat-box flex-grow" id="chatBox">
+                    <div class="message-bot">> Initializing Deal OTC Knowledge Base RAG...</div>
+                    <div class="message-bot">> Connection established. I am your Institutional Deal Agent. How can I assist your onboarding?</div>
+                </div>
+
+                <div class="flex gap-2 mt-4">
+                    <input type="text" id="chatInput" placeholder="Ask about compliance rules or onboarding status..." class="w-full bg-black border border-gray-700 p-2 text-sm text-white focus:outline-none focus:border-bb_orange">
+                    <button class="btn" onclick="sendMessage()">SEND</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const chatBox = document.getElementById('chatBox');
+            if(!input.value) return;
+
+            // Add user message
+            chatBox.innerHTML += `<div class="message-user">${input.value} &lt;</div>`;
+            
+            // Simulate agent response
+            setTimeout(() => {
+                let response = "> Analyzing query against Deal OTC compliance RAG...";
+                if(input.value.toLowerCase().includes('status')) {
+                    response = "> STATUS: Pending UBO Registry. Score: 66/100.";
+                } else if(input.value.toLowerCase().includes('rule')) {
+                    response = "> RULEBOOK: Entities in Dubai must provide Proof of Funds exceeding $10M from a Tier-1 Bank.";
+                } else {
+                    response = "> I have logged your inquiry. Our compliance team will review your UBO documents shortly.";
+                }
+                chatBox.innerHTML += `<div class="message-bot">${response}</div>`;
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }, 1000);
+
+            input.value = '';
+        }
+
+        // Simulate File Upload Parse
+        document.getElementById('fileUpload').addEventListener('change', (e) => {
+            if(e.target.files.length > 0) {
+                const chatBox = document.getElementById('chatBox');
+                chatBox.innerHTML += `<div class="message-user">Uploaded: ${e.target.files[0].name} &lt;</div>`;
+                chatBox.innerHTML += `<div class="message-bot">> Extracting contract clauses via AI Parser...</div>`;
+                
+                setTimeout(() => {
+                    document.getElementById('parseResult').classList.remove('hidden');
+                    chatBox.innerHTML += `<div class="message-bot">> UBO Registry successfully verified. Approval Score increased.</div>`;
+                    chatBox.scrollTop = chatBox.scrollHeight;
+                }, 1500);
+            }
+        });
+    </script>
+</body>
+</html>
