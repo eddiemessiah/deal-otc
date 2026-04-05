@@ -1,5 +1,5 @@
 {
-  "name": "@dealotc/sdk",
+  "name": "@defimessiah/dealotc-sdk",
   "version": "1.0.0",
   "description": "The official Node.js SDK for Deal OTC. Automate institutional crypto onboarding, document parsing, and Walled Garden verification.",
   "main": "index.js",

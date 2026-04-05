@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deal OTC | API Documentation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = { darkMode: 'class', theme: { extend: { colors: { bb_orange: '#ff6600', bb_green: '#00cc00', bb_gray: '#202020', surface: '#111111' }, fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['IBM Plex Mono', 'monospace'] } } } }
+    </script>
+    <style>
+        body { background-color: #000000; color: #ff9900; font-family: 'IBM Plex Mono', monospace; }
+        .card { border: 1px solid #333; padding: 2rem; background: #111; }
+        .glow { text-shadow: 0 0 5px rgba(255, 102, 0, 0.5); }
+        .terminal-header { border-bottom: 2px solid #ff6600; padding-bottom: 0.5rem; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 500; }
+        pre { background: #000; padding: 1rem; border: 1px solid #333; font-size: 0.875rem; overflow-x: auto; color: #a1a1aa; }
+        .code-kw { color: #c678dd; } .code-str { color: #98c379; } .code-fn { color: #61afef; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col p-4 md:p-8">
+
+    <header class="flex justify-between items-end mb-8 terminal-header">
+        <div>
+            <h1 class="text-2xl font-bold glow">DEAL OTC :: API DOCS & SDK</h1>
+            <nav class="mt-2"><a href="/" class="text-sm text-bb_orange hover:text-white underline">BACK TO TERMINAL</a></nav>
+        </div>
+    </header>
+
+    <div class="max-w-5xl mx-auto w-full space-y-8 text-gray-300">
+        
+        <div class="card space-y-4">
+            <h2 class="text-xl text-bb_orange">@defimessiah/dealotc-sdk</h2>
+            <p>The Deal OTC API and Node.js SDK allows enterprise clients, family offices, and partner exchanges to programmatically onboard clients, parse compliance documents, and retrieve Walled Garden Readiness scores.</p>
+            <pre><code>npm install @defimessiah/dealotc-sdk</code></pre>
+        </div>
+
+        <div class="card space-y-4">
+            <h2 class="text-xl text-bb_green">1. Initialize Client</h2>
+            <p class="text-sm">Authenticate using your Deal OTC Enterprise API key.</p>
+            <pre><code><span class="code-kw">const</span> { DealOTC } = <span class="code-fn">require</span>(<span class="code-str">'@defimessiah/dealotc-sdk'</span>);
+
+<span class="code-kw">const</span> dealotc = <span class="code-kw">new</span> <span class="code-fn">DealOTC</span>({ 
+    apiKey: <span class="code-str">'sk_live_12345...'</span>,
+    environment: <span class="code-str">'production'</span>
+});</code></pre>
+        </div>
+
+        <div class="card space-y-4">
+            <h2 class="text-xl text-bb_green">2. Automate Document Parsing (RAG Engine)</h2>
+            <p class="text-sm">Upload a mandate letter or proof of funds. Our AI clause extractor parses the document and updates the CRM.</p>
+            <pre><code><span class="code-kw">const</span> parseResult = <span class="code-kw">await</span> dealotc.compliance.<span class="code-fn">parseDocument</span>(
+    <span class="code-str">"123_APEX_FAMILY_OFFICE"</span>, 
+    <span class="code-str">'proof_of_funds'</span>, 
+    pdfBuffer
+);
+
+console.<span class="code-fn">log</span>(parseResult.analysis);
+<span class="code-kw">// Output: </span>
+<span class="code-kw">// { </span>
+<span class="code-kw">//   approved: true, </span>
+<span class="code-kw">//   extractedCapital: "$15,000,000 USD", </span>
+<span class="code-kw">//   jurisdiction: "Dubai",</span>
+<span class="code-kw">//   redFlags: [] </span>
+<span class="code-kw">// }</span></code></pre>
+        </div>
+
+        <div class="card space-y-4">
+            <h2 class="text-xl text-bb_green">3. Check Readiness Score & Automated CRM Email Actions</h2>
+            <p class="text-sm">Retrieve the client's current status in the 3-Tier Walled Garden. If documents are missing, our backend triggers SendGrid/Resend to automatically email the client requesting the exact missing PDF.</p>
+            <pre><code><span class="code-kw">const</span> status = <span class="code-kw">await</span> dealotc.client.<span class="code-fn">getStatus</span>(<span class="code-str">"123_APEX_FAMILY_OFFICE"</span>);
+
+<span class="code-kw">if</span> (status.score &lt; 90) {
+    console.<span class="code-fn">log</span>(<span class="code-str">`Missing Docs: ${status.missingDocuments.join(', ')}`</span>);
+    <span class="code-kw">// Deal OTC backend automatically emails client: "Please upload your UBO_Registry"</span>
+} <span class="code-kw">else</span> {
+    <span class="code-kw">const</span> report = <span class="code-kw">await</span> dealotc.reports.<span class="code-fn">generateProgramOfOperations</span>(<span class="code-str">"123_APEX_FAMILY_OFFICE"</span>);
+    console.<span class="code-fn">log</span>(<span class="code-str">"Client is Ready to Trade."</span>);
+}</code></pre>
+        </div>
+
+    </div>
+</body>
+</html>

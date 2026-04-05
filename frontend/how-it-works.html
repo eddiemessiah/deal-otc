@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deal OTC | How It Works</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = { darkMode: 'class', theme: { extend: { colors: { bb_orange: '#ff6600', bb_green: '#00cc00', bb_gray: '#202020', surface: '#111111' }, fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['IBM Plex Mono', 'monospace'] } } } }
+    </script>
+    <style>
+        body { background-color: #000000; color: #ff9900; font-family: 'IBM Plex Mono', monospace; }
+        .card { border: 1px solid #333; padding: 2rem; background: #111; }
+        .glow { text-shadow: 0 0 5px rgba(255, 102, 0, 0.5); }
+        .terminal-header { border-bottom: 2px solid #ff6600; padding-bottom: 0.5rem; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 500; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col p-4 md:p-8">
+
+    <header class="flex justify-between items-end mb-8 terminal-header">
+        <div>
+            <h1 class="text-2xl font-bold glow">DEAL OTC :: HOW IT WORKS</h1>
+            <nav class="mt-2"><a href="/" class="text-sm text-bb_orange hover:text-white underline">BACK TO TERMINAL</a></nav>
+        </div>
+    </header>
+
+    <div class="max-w-4xl mx-auto w-full space-y-8 text-gray-300">
+        
+        <div class="card space-y-4">
+            <h2 class="text-xl text-bb_orange">Turning Weeks into Days</h2>
+            <p>Traditional institutional crypto onboarding takes 2-4 weeks. Family offices, corporate treasuries, and hedge funds get bogged down in email chains, PDF shuffling, and manual compliance verifications across different global jurisdictions.</p>
+            <p><strong>Deal OTC Automation Infrastructure eliminates this friction.</strong> By leveraging determinisitic AI, RAG (Retrieval-Augmented Generation) compliance engines, and automated CRM tracking, we reduce time-to-trade to under 48 hours.</p>
+        </div>
+
+        <div class="card space-y-6">
+            <h2 class="text-xl text-bb_orange">The Automated Pipeline</h2>
+            
+            <div class="border-l-2 border-bb_orange pl-4 space-y-2">
+                <h3 class="text-white font-bold">STEP 1: Document Ingestion</h3>
+                <p class="text-sm">Clients drop their Mandate Letters, Proof of Funds (PoF), and corporate registries into the Deal OTC Terminal or via secure Telegram. Our AI Clause Extractor immediately parses the PDFs, pulling out specific UBOs (Ultimate Beneficial Owners), jurisdictions, and capital limits.</p>
+            </div>
+
+            <div class="border-l-2 border-bb_green pl-4 space-y-2">
+                <h3 class="text-white font-bold">STEP 2: The Compliance RAG Engine</h3>
+                <p class="text-sm">The extracted data is cross-referenced against the strict Deal OTC 3-Tier Walled Garden guidelines. If the client is in Dubai, the engine verifies Tier-1 banking requirements. If they are in Zurich, it checks FINMA regulations. Zero hallucination, strict adherence to rules.</p>
+            </div>
+
+            <div class="border-l-2 border-blue-500 pl-4 space-y-2">
+                <h3 class="text-white font-bold">STEP 3: Automated CRM & Emails</h3>
+                <p class="text-sm">Based on the analysis, the system updates the client's OTC Readiness Score (0-100). If documents are missing (e.g., unsigned mandate), the Deal Agent automatically sends a branded, context-aware email or Telegram message requesting the exact missing page.</p>
+            </div>
+
+            <div class="border-l-2 border-purple-500 pl-4 space-y-2">
+                <h3 class="text-white font-bold">STEP 4: Program of Operations</h3>
+                <p class="text-sm">Once the score hits >90, the system generates a 1-page executive "Program of Operations" report. Deal OTC admins review this standardized dossier and click 'Approve', advancing the client to Active Trading status.</p>
+            </div>
+        </div>
+
+        <div class="card space-y-4">
+            <h2 class="text-xl text-bb_orange">Deal OTC Control & Trust Architecture</h2>
+            <p>Automation does not mean lack of control. The Deal OTC compliance team retains ultimate authority. The AI acts as the Mandate Reviewer—flagging risks, confirming capital thresholds, and preparing the dossier—but the final key is always turned by a human admin.</p>
+            <p>Our <em>Mandate as a Service</em> model ensures we succeed only when your deals close safely and rapidly.</p>
+        </div>
+
+    </div>
+</body>
+</html>
