@@ -1,0 +1,8 @@
+{
+  "version": 2,
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/backend/core/server.js" },
+    { "source": "/", "destination": "/frontend/index.html" },
+    { "source": "/(.*)", "destination": "/frontend/index.html" }
+  ]
+}
